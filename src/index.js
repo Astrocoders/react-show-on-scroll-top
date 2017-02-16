@@ -2,7 +2,7 @@ import React from 'react'
 import debounce from 'lodash.debounce'
 
 export default class ShowOnScrollTop extends React.Component {
-  static state = {
+  state = {
     isScrollingToTop: true,
     lastScrollPosition: 0,
   }
