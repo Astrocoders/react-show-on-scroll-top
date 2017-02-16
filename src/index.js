@@ -29,7 +29,7 @@ export default class ShowOnScrollTop extends React.Component {
       <div
         style={{
           transform: this.state.isScrollingToTop ? 'translateY(0)' : 'translateY(-1000px)',
-          transition: '0.8s ease-out transform',
+          transition: '0.8s ease-in-out transform',
         }}
       >
         {this.props.children}
