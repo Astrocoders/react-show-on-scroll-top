@@ -1,13 +1,23 @@
-import React from 'react'
+import React, { PropTypes }  from 'react'
 import debounce from 'lodash.debounce'
 
 export default class ShowOnScrollTop extends React.Component {
+  static propTypes = {
+    lock: PropTypes.bool,
+  }
+
+  static defaultProps = {
+    lock: false,
+  }
+
   state = {
     isScrollingToTop: true,
     lastScrollPosition: 0,
   }
 
   scrollHandler = debounce(event => {
+    if(this.props.lock) return
+
     const scrollPos = window.scrollY
 
     this.setState({
